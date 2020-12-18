@@ -9,10 +9,11 @@ class User:
         self.constructTime = time
         self.nickname = nickname
 
-    def userInput(self):
+    def user_input(self):
         return (input(f"Choose letter {self.nickname}: ")).lower()
 
-def getIndexes(word):
+
+def get_indexes(word):
     return [i for i in range(0, len(word)) if userInput == word[i]]
 
 
@@ -25,9 +26,9 @@ hiddenWord = list("_" * len(chosenWord))
 
 print(chosenWord)
 while "_" in hiddenWord and user.lives > 0 and user.score > 0:
-    userInput = user.userInput()
+    userInput = user.user_input()
     if userInput in chosenWord:
-        indexes = getIndexes(chosenWord)
+        indexes = get_indexes(chosenWord)
 
         for i in indexes:
             user.score += 20
